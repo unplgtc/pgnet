@@ -1,0 +1,74 @@
+/* ----- RESET ----- */
+/* Here, we are going to reset all browsers, so we don't have to declare a bunch of stuff over and over */
+@import url("reset.css");
+
+body { font: 14px/20px Verdana, Arial, sans-serif; background:#000000;  color: #ffffff; padding:10px 0 0 0; }
+html { overflow-y: scroll; }
+input, textarea { font: normal 13px/20px Verdana, Arial, sans-serif; color: #333; }
+
+/* We use em and strong in the text, instead of <b> or <i> ... these are read by browsers to be emphasis terms, and help for readers
+by vision-impaired users and spiders */
+em { font-style: italic; }
+strong { font-weight: bold; }
+.anchorlink {height:1px;line-height:1px;font-size:1px;}
+p { margin: 0 0 17px 0; }
+
+h1 { font: bold 19px/21px Verdana, Arial, sans-serif; color: #b82803; letter-spacing: 1px; margin: 0 0 5px 0; }
+h2 { font: bold 17px/20px Verdana, Arial, sans-serif; color: #d4a558; margin: 0 0 13px 0; }
+h3 { font: bold 14px/17px Verdana, Arial, sans-serif; color: #7c4845; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 10px 0; }
+h4 { font: bold 14px/20px Verdana, Arial, sans-serif; color: #7c4845; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 10px 0; }
+
+/* 
+.quote {text-indent: 1em; font: bold italic 15px/20px Georgia, Cambria, serif; color: #4683de; }
+ */
+ 
+.red { font: 14px/20px Verdana, Arial, sans-serif; color: #b82803; }
+.redsmall { font: 12px/20px Verdana, Arial, sans-serif; color: #b82803; }
+.redbold { font: bold 14px/20px Verdana, Arial, sans-serif; color: #b82803; }
+.redhead { font: bold 17px/20px Verdana, Arial, sans-serif; color: #b82803; }
+.gold { font: 14px/20px Verdana, Arial, sans-serif; color: #d4a558; }
+.goldsmall { font: 12px/20px Verdana, Arial, sans-serif; color: #d4a558; }
+.goldbold { font: bold 14px/20px Verdana, Arial, sans-serif; color: #d4a558; }
+.goldhead { font: bold 17px/20px Verdana, Arial, sans-serif; color: #d4a558; }
+.quote {text-indent: 1em; font: bold italic 15px/20px Georgia, Cambria, serif; color: #ffffff; }
+.quote-plain {text-indent: 1em; font: italic 15px/20px Georgia, Cambria, serif; color: #ffffff; }
+.quote-big { font: italic 16px/20px Georgia, Cambria, serif; color: #ffffff; }
+.qa { font: italic 16px/20px Georgia, Cambria, serif; color: #d4a558; }
+.dropcap { font: 25px/25px Georgia, Cambria, serif; color: #ffffff; }
+.dropcapq { font: italic 25px/25px Georgia, Cambria, serif; color: #d4a558; }
+.dropcap2 { font: 21px/21px Georgia, Cambria, serif; color: #ffffff; }
+.xuni { font: 12px/14px Verdana, Arial, sans-serif; color: #536d83; }
+.xuni a:link, .xuni a:visited {font: 12px/14px Verdana, Arial, sans-serif; color: #536d83;font-weight:normal;text-decoration:underline;}
+hr.mt {color: #000000;background-color: #000000;border:0; height:1px;  margin:7px 0 15px 0px; text-align: left;}
+hr.mtr {color: #b82803;background-color: #b82803;border:0; height:1px;  margin:27px 0 25px 0px; text-align: left;}
+hr.mtr2 {color: #b82803;background-color: #b82803;border:0; height:1px;  margin:7px 0 25px 0px; text-align: left;}
+.center, .center p {text-align:center;}
+
+/* ----- LINKS ----- */
+/* We change the link color here. The first line color is the color of the link, the second line is the color of the rollover */
+a:link, a:visited { font-weight: bold; color: #536d83; text-decoration: none; }
+a:active, a:hover { font-weight: bold; color: #2182d0; text-decoration: none; }
+
+
+/* ----- ARCHITECTURE ----- */
+html, body {
+       height:auto !important; /* FF and compliant browsers should automatically size the body/html */
+       height:100%; /* ie will set the body/html to 100%, anything overflowing that will (incorrectly) resize it. go IE */
+       min-height:100%; /* when FF/etc automatically size the body/html it should be AT LEAST the height of the entire browser window, but can expand based on content. */
+}
+.imgblock{display:block;margin:0;padding:0;}
+.imgbottom {margin-bottom:50px;position: absolute; bottom:0;}
+#container{
+	width: 1000px;   
+	margin: 0 auto;
+	background: url('images/bg-site.jpg');
+	background-position:0 610px;
+} 
+#left {float:left;width:179px;}
+#middle {min-height:535px;text-align:left;float:left;width:821px;}
+#pgcontent {width:764px;padding:0 37px 0 20px;}
+.none {margin:0;padding:0;clear:both;}
+#footer { clear:both;width: 1000px;background-color:#000000;z-index:999;padding-top:10px;text-align:center; }
+#bottomspace { width:1000px;clear:both; height: 30px; background:#000000;z-index:99;}
+#backtotop { padding-top: 20px; text-align:center;clear:both;}
+.clear {clear:both;line-height: 0px;}
