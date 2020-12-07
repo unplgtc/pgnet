@@ -1,0 +1,11 @@
+version: '3'
+services:
+  pgnet:
+    image: unplgtc/pgnet:staging
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+      args:
+        - NEXT_PUBLIC_ENV=staging
+    ports:
+      - 3000
