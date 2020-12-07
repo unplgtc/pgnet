@@ -1,0 +1,63 @@
+---
+apiVersion: getambassador.io/v2
+kind: Mapping
+metadata:
+  name: pgnet
+  namespace: prod
+spec:
+  prefix: /
+  host: paulguyot.net
+  rewrite: /
+  service: pgnet:80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pgnet
+  namespace: prod
+spec:
+  ports:
+  - name: pgnet-prd
+    port: 80
+    targetPort: 3000
+  selector:
+    app: pgnet
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pgnet
+  namespace: prod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pgnet
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: pgnet
+        version: 1.0.0
+        redis-client: "true"
+    spec:
+      containers:
+      - name: pgnet
+        image: unplgtc/pgnet:release
+        imagePullPolicy: Always
+        ports:
+        - name: pgnet-prd
+          containerPort: 3000
+        livenessProbe:
+          httpGet:
+            path: /healthcheck
+            port: 3000
+          initialDelaySeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /readycheck
+            port: 3000
+          initialDelaySeconds: 3
+      imagePullSecrets:
+      - name: regcred

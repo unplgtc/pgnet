@@ -1,0 +1,187 @@
+$red: #000;
+$blue: #53c8f0;
+$orange: #c2613d;
+$white: #fff;
+$light_grey: #f0f0f0;
+$medium_grey: #808080;
+$dark_grey: #050505;
+
+// Light
+$bg_light: #fff;
+$text_light: #000;
+
+// Dark
+$bg_dark: #202020;
+$text_dark: #bababa;
+
+@mixin hover-supported {    
+	/* Redtag: Now that iPadOS (as of 13.4) has a pointer we can't rule it out of hover
+	 * events. Commenting this out instead of deleting for now while waiting to see if Safari
+	 * gets a decent way to address the difference between a hover and a tap. In the
+	 * meantime the below change will opt all touch platforms back into hover. I think
+	 * this is the right tradeoff because hover events just act slightly weird when tapped
+	 * vs iPadOS pointer not triggering hover feels very wrong and bad.
+
+	@media not all and (pointer: coarse) {
+		&:hover {
+			@content;
+		}
+	}*/
+	&:hover {
+		@content;
+	}
+}
+
+.container {
+	&.light {
+		background-color: $bg_light;
+		color: $text_light;
+
+		header {
+			a {
+				color: $red;
+
+				&:visited {
+					color: $red;
+				}
+			}
+		}
+
+		a {
+			color: $red;
+
+			&:visited {
+				color: $red;
+			}
+		}
+
+		button {
+			color: $red;
+
+			&:hover {
+				background-color: $red;
+				color: $white;
+			}
+		}
+
+		hr {
+			background-color: $red;
+		}
+
+		section {
+			border-color: $red;
+		}
+
+		div {
+			border-color: $red;
+		}
+
+		input {
+			color: $text_light;
+		}
+
+		.command-palette {
+			border-color: $red;
+		}
+
+		.bg, .selected {
+			background-color: $light_grey;
+		}
+
+		.bg-hover {
+			@include hover-supported() {
+				background-color: $light_grey;
+			}
+		}
+
+		.bg-contrast {
+			background-color: $white;
+		}
+
+		.bg-contrast-hover {
+			@include hover-supported() {
+				background-color: $white;
+			}
+		}
+
+		footer {
+			color: $red;
+		}
+	}
+
+	&.dark {
+		background-color: $bg_dark;
+		color: $text_dark;
+
+		header {
+			a {
+				color: $red;
+
+				&:visited {
+					color: $red;
+				}
+			}
+		}
+
+		a {
+			color: $blue;
+
+			&:visited {
+				color: $blue;
+			}
+		}
+
+		button {
+			color: $blue;
+
+			&:hover {
+				background-color: $blue;
+				color: $bg_dark;
+			}
+		}
+
+		input {
+			border-color: $blue;
+		}
+
+		hr {
+			background-color: $blue;
+		}
+
+		section {
+			border-color: $blue;
+		}
+
+		div {
+			border-color: $blue;
+		}
+
+		input {
+			color: $text_dark;
+		}
+
+		.bg, .selected {
+			background-color: $dark_grey;
+		}
+
+		.bg-hover {
+			@include hover-supported() {
+				background-color: $dark_grey;
+			}
+		}
+
+		.bg-contrast {
+			background-color: $bg_dark;
+		}
+
+		.bg-contrast-hover {
+			@include hover-supported() {
+				background-color: $bg_dark;
+			}
+		}
+
+		footer {
+			color: $orange;
+		}
+	}
+}

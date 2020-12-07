@@ -1,0 +1,103 @@
+html {
+	font-family: 'Mallory', -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 16px;
+	text-align: center;
+}
+
+html, body, #__next {
+	height: 100%;
+	margin: 0;
+}
+
+.container {
+	min-height: 100%; // Fill background color when content doesn't fill the viewport vertically
+	overflow: hidden;
+}
+
+.content {
+	max-width: 75rem;
+	margin: 0 auto;
+	padding: 1.5rem 0 2rem;
+}
+
+header {
+	padding-bottom: 1.5rem;
+
+	img {
+		height: 4rem;
+		vertical-align: middle;
+	}
+
+	h2 {
+		display: inline-block;
+		margin: 0 0 0 1rem;
+		vertical-align: middle;
+	}
+}
+
+p {
+	font-weight: 300;
+	line-height: 1.5em;
+}
+
+button {
+	cursor: pointer;
+	padding: 0.5rem;
+	margin: 0.5rem;
+	border-radius: 10px;
+	border: 1px solid;
+	font-weight: 500;
+	font-family: 'Mallory', -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+input {
+	padding: 0.5rem;
+	margin: 0.5rem;
+	border-radius: 5px;
+	border: 1px solid;
+	font-weight: 500;
+	font-family: 'Mallory', -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+hr {
+	border: none;
+	height: 1px;
+}
+
+footer {
+	padding-top: 1.5rem;
+}
+
+/* !------ FONTS ------ */
+@font-face { /* !200 - ExtraLight */
+	font-family: 'Mallory';
+	src: url('/fonts/Mallory-576/Mallory-ExtraLight.eot'); /* IE9 Compat Modes */
+	src: url('/fonts/Mallory-576/Mallory-ExtraLight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	     url('/fonts/Mallory-576/Mallory-ExtraLight.woff') format('woff');
+	font-weight: 200;
+	font-style: normal;
+}
+@font-face { /* !300 - Light */
+	font-family: 'Mallory';
+	src: url('/fonts/Mallory-576/MalloryMP-Light.eot'); /* IE9 Compat Modes */
+	src: url('/fonts/Mallory-576/MalloryMP-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	     url('/fonts/Mallory-576/MalloryMP-Light.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face { /* !300 - LightItalic */
+	font-family: 'Mallory';
+	src: url('/fonts/Mallory-576/MalloryMP-LightItalic.eot'); /* IE9 Compat Modes */
+	src: url('/fonts/Mallory-576/MalloryMP-LightItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	     url('/fonts/Mallory-576/MalloryMP-LightItalic.woff') format('woff');
+	font-weight: 300;
+	font-style: italic;
+}
+@font-face { /* !500 - Medium */
+	font-family: 'Mallory';
+	src: url('/fonts/Mallory-576/MalloryMP-Medium.eot'); /* IE9 Compat Modes */
+	src: url('/fonts/Mallory-576/MalloryMP-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	     url('/fonts/Mallory-576/MalloryMP-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+}

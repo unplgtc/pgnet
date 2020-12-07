@@ -1,0 +1,17 @@
+From unplgtc/node:14
+
+WORKDIR /usr/src/pgnet
+
+# Install production dependencies
+COPY package*.json ./
+RUN npm ci --only=production
+
+# Write source and configuration files
+COPY src/ ./src/
+COPY config/ ./config/
+COPY public/ ./public/
+
+ARG NEXT_PUBLIC_ENV
+ENV NEXT_PUBLIC_ENV=$NEXT_PUBLIC_ENV
+
+ENTRYPOINT [ "npm", "run", "dev" ]

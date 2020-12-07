@@ -1,0 +1,21 @@
+version: '3'
+services:
+  pgnet:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+      args:
+        - NEXT_PUBLIC_ENV=$ENV
+    volumes:
+      - ./src:/usr/src/pgnet/src
+      - ./public:/usr/src/pgnet/public
+      - ./config:/usr/src/pgnet/config
+  ngrok:
+    image: wernight/ngrok
+    ports:
+      - 4040
+    environment:
+      - NGROK_AUTH=$NGROK_AUTH_TOKEN
+      - NGROK_SUBDOMAIN=$NGROK_SUBDOMAIN
+      - NGROK_BINDTLS=true
+      - NGROK_PORT=pgnet:$PORT
